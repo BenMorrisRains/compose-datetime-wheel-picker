@@ -7,3 +7,10 @@ plugins {
   alias(libs.plugins.maven.publish).apply(false)
   alias(libs.plugins.ksp).apply(false)
 }
+
+// For JitPack - apply publishing to the datetime-wheel-picker module
+subprojects {
+  if (name == "datetime-wheel-picker") {
+    apply(plugin = "maven-publish")
+  }
+}
