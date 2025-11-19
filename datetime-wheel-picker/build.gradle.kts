@@ -147,5 +147,9 @@ android {
 
 mavenPublishing {
   publishToMavenCentral(automaticRelease = true)
-  signAllPublications()
+  
+  // Only sign publications when publishing to Maven Central, not for local publishing
+  if (project.hasProperty("signing.keyId")) {
+    signAllPublications()
+  }
 }
