@@ -42,7 +42,7 @@ internal fun AdaptiveWheelDayMonthPicker(
 
     var snappedDate by remember {
         mutableStateOf(
-            LocalDate(2000, startMonth, startDayOfMonth)
+            LocalDate(2025, startMonth, startDayOfMonth)
         )
     }
 
