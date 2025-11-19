@@ -3,3 +3,5 @@ jdk:
 before_install:
   - echo "kotlin.js.compiler=legacy" >> gradle.properties
   - echo "kotlin.native.ignoreDisabledTargets=true" >> gradle.properties
+install:
+  - ./gradlew :datetime-wheel-picker:publishToMavenLocal -PJITPACK=true -x test -x lint
