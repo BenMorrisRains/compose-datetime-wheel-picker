@@ -35,14 +35,17 @@ kotlin {
     }
   }
 
-  js {
-    browser()
-    binaries.executable()
-  }
+  // Only include JS/WASM targets if not building on JitPack
+  if (!project.hasProperty("JITPACK")) {
+    js {
+      browser()
+      binaries.executable()
+    }
 
-  @OptIn(org.jetbrains.kotlin.gradle.ExperimentalWasmDsl::class)
-  wasmJs {
-    browser()
+    @OptIn(org.jetbrains.kotlin.gradle.ExperimentalWasmDsl::class)
+    wasmJs {
+      browser()
+    }
   }
 
   listOf(
